@@ -1,4 +1,5 @@
 _build/
 _gtest/
+googletest/build
 binarySearch/build/
 bubbleSort/build/
