@@ -13,7 +13,7 @@ set(Yellow "${Esc}[1;33m")
 set(Green "${Esc}[1;32m")
 set(ColourReset "${Esc}[m")
 
-message("${Green}>> bubbleSort: started binarySearch CMakeLists.txt <<${ColourReset}")
+message("${Green}>> bubbleSort: started bubbleSort CMakeLists.txt <<${ColourReset}")
 
 # Download and configure googletest if not found
 if(NOT EXISTS ${GTestDownloadDir})
