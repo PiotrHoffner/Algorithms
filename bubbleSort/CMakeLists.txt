@@ -3,11 +3,11 @@ cmake_minimum_required(VERSION 3.10)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(GTestDir ${CMAKE_CURRENT_SOURCE_DIR}/../binarySearch/build)
+set(GTestDownloadDir ${CMAKE_CURRENT_SOURCE_DIR}/../_gtest/googletest-download)
 
 if(${CMAKE_SOURCE_DIR} MATCHES ${CMAKE_CURRENT_SOURCE_DIR})
-  add_subdirectory(${GTestDir}/googletest-src
-                   ${GTestDir}/googletest-build
+  add_subdirectory(${GTestDownloadDir}/googletest-src
+                   ${GTestDownloadDir}/googletest-build
                    EXCLUDE_FROM_ALL)
 endif()
 

@@ -1,4 +1,4 @@
-0build/
+_build/
+_gtest/
 binarySearch/build/
 bubbleSort/build/
-.gtest/
