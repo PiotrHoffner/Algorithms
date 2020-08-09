@@ -5,5 +5,5 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project (Algorithms)
 add_subdirectory(binarySearch)
+add_subdirectory(bubbleSort)
 enable_testing()
-#add_test(NAME BSTests COMMAND BSTests)
