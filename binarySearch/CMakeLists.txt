@@ -15,6 +15,7 @@ set(ColourReset "${Esc}[m")
 
 message("${Green}>> binarySearch: started binarySearch CMakeLists.txt <<${ColourReset}")
 
+# Download and configure googletest if not found
 if(NOT EXISTS ${GTestDownloadDir})
   message("${Yellow}>> binarySearch: googletest-download dir not found. Configuring /googletest/CMakeLists.txt <<${ColourReset}")
   execute_process(COMMAND mkdir -p build WORKING_DIRECTORY ${MainDir}/googletest)
@@ -22,15 +23,17 @@ if(NOT EXISTS ${GTestDownloadDir})
   message("${Green}>> binarySearch: googletest configured <<${ColourReset}")
 endif()
 
+# Add subdirectory if CMake was invoked here
 if(${CMAKE_CURRENT_SOURCE_DIR} STREQUAL ${CMAKE_SOURCE_DIR})
   add_subdirectory(${GTestDownloadDir}/googletest-src
                    ${GTestDownloadDir}/googletest-build
                    EXCLUDE_FROM_ALL)
 endif()
 
-# Now simply link against gtest or gtest_main as needed. Eg
-add_executable(main binarySearch.cpp main.cpp)
+# Now simply link against gtest or gtest_main as needed. 
+# add_executable(main binarySearch.cpp main.cpp)
 add_executable(binarySearchTests binarySearch.cpp BSTests.cpp)
 target_link_libraries(binarySearchTests gtest_main)
+
 enable_testing()
 add_test(NAME binarySearchTests COMMAND binarySearchTests)

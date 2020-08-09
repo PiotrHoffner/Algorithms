@@ -15,6 +15,7 @@ set(ColourReset "${Esc}[m")
 
 message("${Green}>> bubbleSort: started binarySearch CMakeLists.txt <<${ColourReset}")
 
+# Download and configure googletest if not found
 if(NOT EXISTS ${GTestDownloadDir})
   message("${Yellow}>> bubbleSort: googletest-download dir not found. Configuring /googletest/CMakeLists.txt <<${ColourReset}")
   execute_process(COMMAND mkdir -p build WORKING_DIRECTORY ${MainDir}/googletest)
@@ -22,12 +23,14 @@ if(NOT EXISTS ${GTestDownloadDir})
   message("${Green}>> bubbleSort: googletest configured <<${ColourReset}")
 endif()
 
+# Add subdirectory if CMake was invoked here
 if(${CMAKE_CURRENT_SOURCE_DIR} STREQUAL ${CMAKE_SOURCE_DIR})
   add_subdirectory(${GTestDownloadDir}/googletest-src
                    ${GTestDownloadDir}/googletest-build
                    EXCLUDE_FROM_ALL)
 endif()
 
+# Now simply link against gtest or gtest_main as needed.
 add_executable(areEqual-ut areEqual.cpp areEqualTests.cpp)
 add_executable(bubbleSort-ut areEqual bubbleSort.cpp bubbleSortTests.cpp)
 target_link_libraries(areEqual-ut gtest_main)
