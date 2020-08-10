@@ -1,4 +1,4 @@
-.PHONY: algorithms clean binarySearch bubbleSort nwd
+.PHONY: algorithms clean binarySearch bubbleSort nwd primeNumbers
 
 default: algorithms
 
@@ -14,6 +14,9 @@ bubbleSort:
 nwd:
 	cd nwd && mkdir -p build && cd build && cmake .. && make -j && ./Nwd-ut
 
+primeNumbers:
+	cd primeNumbers && mkdir -p build && cd build && cmake .. && make -j && ./PrimeNumbers-ut
+
 clean:
 	rm -rf ./_gtest
 	rm -rf ./_build
@@ -21,3 +24,4 @@ clean:
 	rm -rf ./binarySearch/build
 	rm -rf ./bubbleSort/build
 	rm -rf ./nwd/build
+	rm -rf ./primeNumbers/build
