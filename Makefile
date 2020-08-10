@@ -17,6 +17,9 @@ nwd:
 primeNumbers:
 	cd primeNumbers && mkdir -p build && cd build && cmake .. && make -j && ./PrimeNumbers-ut
 
+sortingAlgorithms:
+	cd sortingAlgorithms && mkdir -p build && cd build && cmake .. && make -j && ./sortingAlgorithms-ut
+
 clean:
 	rm -rf ./_gtest
 	rm -rf ./_build
@@ -25,3 +28,4 @@ clean:
 	rm -rf ./bubbleSort/build
 	rm -rf ./nwd/build
 	rm -rf ./primeNumbers/build
+	rm -rf ./sortingAlgorithms/build
