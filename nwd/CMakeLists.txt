@@ -35,8 +35,8 @@ if(${CMAKE_CURRENT_SOURCE_DIR} STREQUAL ${CMAKE_SOURCE_DIR})
 endif()
 
 # Set source list
-set(SRC_LIST ${PROJECT_NAME}.cpp)
-set(TEST_SRC_LIST ${PROJECT_NAME}Tests.cpp)
+set(SRC_LIST Nwd.cpp Nww.cpp)
+set(TEST_SRC_LIST NwdTests.cpp NwwTests.cpp)
 
 ## target_include_directories(src)
 
