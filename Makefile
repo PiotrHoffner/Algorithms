@@ -1,4 +1,4 @@
-.PHONY: algorithms clean binarySearch bubbleSort nwd primeNumbers
+.PHONY: algorithms clean binarySearch bubbleSort nwd primeNumbers sortingAlgorithms
 
 default: algorithms
 
