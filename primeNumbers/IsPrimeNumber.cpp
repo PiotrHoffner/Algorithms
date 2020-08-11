@@ -1,5 +1,6 @@
 #include "IsPrimeNumber.hpp"
 
+#include <cmath>
 #include <stdexcept>
 
 bool isPrimeNumber(const unsigned argument) {
@@ -7,7 +8,7 @@ bool isPrimeNumber(const unsigned argument) {
         return false;
     }
     bool isArgumentPrime = true;
-    for(unsigned divisor = 2; divisor < argument; ++divisor) {
+    for(unsigned divisor = 2; divisor <= std::sqrt(argument); ++divisor) {
         if(argument % divisor == 0) {
             isArgumentPrime = false;
         }
