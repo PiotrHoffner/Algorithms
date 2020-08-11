@@ -1,33 +1,33 @@
 #include "gtest/gtest.h"
 #include "IsPrimeNumber.hpp"
 
-TEST(IsPrimeNumberTests, returnFalseIfPassed0) {
-    EXPECT_EQ(false, isPrimeNumber(0));
-}
-TEST(IsPrimeNumberTests, returnFalseIfPassed1) {
-    EXPECT_EQ(false, isPrimeNumber(1));
-}
-TEST(IsPrimeNumberTests, returnTrueIfPassed2) {
-    EXPECT_EQ(true, isPrimeNumber(2));
-}
-TEST(IsPrimeNumberTests, returnTrueIfPassed3) {
-    EXPECT_EQ(true, isPrimeNumber(3));
-}
-TEST(IsPrimeNumberTests, returnFalseIfPassed4) {
-    EXPECT_EQ(false, isPrimeNumber(4));
-}
-TEST(IsPrimeNumberTests, returnTrueIfPassed5) {
-    EXPECT_EQ(true, isPrimeNumber(5));
-}
-TEST(IsPrimeNumberTests, returnFalseIfPassed6) {
-    EXPECT_EQ(false, isPrimeNumber(6));
-}
-TEST(IsPrimeNumberTests, returnTrueIfPassed7) {
-    EXPECT_EQ(true, isPrimeNumber(7));
-}
-TEST(IsPrimeNumberTests, returnFalseIfPassed20) {
-    EXPECT_EQ(false, isPrimeNumber(20));
-}
-TEST(IsPrimeNumberTests, returnTrueIfPassed23) {
-    EXPECT_EQ(true, isPrimeNumber(23));
+struct TestingValues {
+    TestingValues(unsigned argument, bool expected)
+    :   argument(argument), expected(expected)
+    {}
+
+    unsigned argument;
+    bool expected;
+};
+
+struct IsPrimeNumberTests : public ::testing::TestWithParam<TestingValues> {
+};
+
+INSTANTIATE_TEST_SUITE_P(ParamT1,
+                         IsPrimeNumberTests,
+                         ::testing::Values(
+                                           TestingValues{0, false},
+                                           TestingValues{1, false},
+                                           TestingValues{2, true},
+                                           TestingValues{3, true},
+                                           TestingValues{4, false},
+                                           TestingValues{5, true},
+                                           TestingValues{6, false},
+                                           TestingValues{7, true},
+                                           TestingValues{20, false},
+                                           TestingValues{23, true}
+));
+
+TEST_P(IsPrimeNumberTests, checkExpectedForIsPrimeNumber) {
+    EXPECT_EQ(GetParam().expected, isPrimeNumber(GetParam().argument));
 }
