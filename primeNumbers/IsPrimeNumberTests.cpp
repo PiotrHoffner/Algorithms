@@ -19,3 +19,6 @@ TEST(IsPrimeNumberTests, returnFalseIfPassed4) {
 TEST(IsPrimeNumberTests, returnTrueIfPassed5) {
     EXPECT_EQ(true, isPrimeNumber(5));
 }
+TEST(IsPrimeNumberTests, returnFalseIfPassed6) {
+    EXPECT_EQ(false, isPrimeNumber(6));
+}
