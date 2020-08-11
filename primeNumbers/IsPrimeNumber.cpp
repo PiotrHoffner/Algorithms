@@ -2,11 +2,15 @@
 
 #include <stdexcept>
 
-bool isPrimeNumber(const int argument) {
-    if(argument == 0 || argument == 1 || argument == 4)
+bool isPrimeNumber(const unsigned argument) {
+    if(argument == 0 || argument == 1) {
         return false;
-    if(argument == 2 || argument ==3)
-        return true;
-        
-    throw std::logic_error("Err!\n");
+    }
+    bool isArgumentPrime = true;
+    for(unsigned divisor = 2; divisor < argument; ++divisor) {
+        if(argument % divisor == 0) {
+            isArgumentPrime = false;
+        }
+    }
+    return isArgumentPrime;
 }

@@ -1,3 +1,3 @@
 #pragma once
 
-bool isPrimeNumber(const int argument);
+bool isPrimeNumber(const unsigned argument);
