@@ -35,8 +35,9 @@ if(${CMAKE_CURRENT_SOURCE_DIR} STREQUAL ${CMAKE_SOURCE_DIR})
 endif()
 
 # Set source list
-set(SRC_LIST GenPrimeNumbers.cpp)
-set(TEST_SRC_LIST GenPrimeNumbersTests.cpp)
+set(SRC_LIST GenPrimeNumbers.cpp IsPrimeNumber.cpp)
+set(TEST_SRC_LIST GenPrimeNumbersTests.cpp
+                  IsPrimeNumberTests.cpp)
 
 ## target_include_directories(src)
 
