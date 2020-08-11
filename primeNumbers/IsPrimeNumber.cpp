@@ -8,9 +8,10 @@ bool isPrimeNumber(const unsigned argument) {
         return false;
     }
     bool isArgumentPrime = true;
-    for(unsigned divisor = 2; divisor <= std::sqrt(argument); ++divisor) {
+    for(unsigned divisor = 2; divisor < argument; ++divisor) {
         if(argument % divisor == 0) {
             isArgumentPrime = false;
+            break;
         }
     }
     return isArgumentPrime;
