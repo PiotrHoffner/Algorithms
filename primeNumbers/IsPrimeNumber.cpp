@@ -1,7 +1,12 @@
 #include "IsPrimeNumber.hpp"
 
+#include <stdexcept>
+
 bool isPrimeNumber(const int argument) {
     if(argument == 0 || argument == 1)
         return false;
-    return true;
+    if(argument == 2)
+        return true;
+    
+    throw std::logic_error("Err!\n");
 }
