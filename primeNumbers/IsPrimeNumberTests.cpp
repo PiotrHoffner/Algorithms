@@ -4,3 +4,6 @@
 TEST(IsPrimeNumberTests, returnFalseIfPassed0) {
     EXPECT_EQ(false, isPrimeNumber(0));
 }
+TEST(IsPrimeNumberTests, returnFalseIfPassed1) {
+    EXPECT_EQ(false, isPrimeNumber(1));
+}
