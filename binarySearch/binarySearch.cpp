@@ -2,25 +2,25 @@
 
 #include <stdexcept>
 
-unsigned binarySearch(int searchedValue, int* array, unsigned size, unsigned left, unsigned right) {
-    if(right > size) {
-        throw std::invalid_argument("binarySearch: value of right is higher than array size!\n");
+unsigned binarySearch(int searchedValue, int* array, unsigned size) {
+    if(size == 0) {
+        throw std::invalid_argument("binarySearch: searched value not found!\n");
     }
-    if(left > right) {
-        throw std::invalid_argument("binarySearch: left is higher than right!\n");
+    
+    unsigned middleIndex = size / 2;
+    int middleValue = array[middleIndex];
+
+    if(searchedValue == middleValue) {
+        return middleIndex;
     }
-    unsigned middle = (left + right) / 2;
-    if(array[middle] == searchedValue) {
-        return middle;
+
+    if(searchedValue < middleValue) {
+        return binarySearch(searchedValue, array, middleIndex);
     }
-    if(middle == left || middle == right) {
-        throw std::invalid_argument("binarySearch: searched argument not found!\n");
+
+    if(searchedValue > middleValue) {
+        unsigned nextIndex = middleIndex + 1;
+        return nextIndex + binarySearch(searchedValue, array + nextIndex, size - nextIndex);
     }
-    if(array[middle] > searchedValue) {
-        return binarySearch(searchedValue, array, size,  left, middle - 1);
-    }
-    if(array[middle] < searchedValue) {
-        return binarySearch(searchedValue, array, size, middle + 1, right);
-    }
-    throw std::logic_error("binarySearch: unknown logic error!\n");
+    throw std::logic_error("binarySearch: unknown error!");
 }
