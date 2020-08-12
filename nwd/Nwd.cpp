@@ -21,5 +21,6 @@ int gcd(int first, int second) {
         second = first % second;
         first = temp;
     }
+
     return first;
 }
