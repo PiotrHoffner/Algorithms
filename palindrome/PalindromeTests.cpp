@@ -21,3 +21,8 @@ TEST(PalindromeTests, returnsTrueIfThreeLetterPalindromePassedIn) {
 TEST(PalindromeTests, returnsFalseIfThreeLetterNonPalindromePassedIn) {
     EXPECT_EQ(false, palindrome("pon"));
 }
+
+TEST(PalindromeTests, returnsTrueIfFourLetterPalindromePassedIn) {
+    EXPECT_EQ(true, palindrome("abba"));
+    EXPECT_EQ(false, palindrome("ccba"));
+}
