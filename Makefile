@@ -1,4 +1,4 @@
-.PHONY: algorithms clean binarySearch bubbleSort nwd palindrome primeNumbers sortingAlgorithms
+.PHONY: algorithms clean binarySearch bubbleSort fibonacci nwd palindrome primeNumbers sortingAlgorithms
 
 default: algorithms
 
@@ -23,6 +23,9 @@ primeNumbers:
 sortingAlgorithms:
 	cd sortingAlgorithms && mkdir -p build && cd build && cmake .. && make -j && ./sortingAlgorithms-ut
 
+fibonacci:
+	cd fibonacci && mkdir -p build && cd build && cmake .. && make -j && ./Fibonacci-ut
+
 clean:
 	rm -rf ./_gtest
 	rm -rf ./_build
@@ -33,3 +36,4 @@ clean:
 	rm -rf ./palindrome/build
 	rm -rf ./primeNumbers/build
 	rm -rf ./sortingAlgorithms/build
+	rm -rf ./fibonacci/build
