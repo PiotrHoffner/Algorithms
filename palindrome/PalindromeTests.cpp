@@ -8,3 +8,8 @@ TEST(PalindromeTests, returnsFalseIfEmptyStringPassedIn) {
 TEST(PalindromeTests, returnsTrueIfOneLetterStringPassedIn) {
     EXPECT_EQ(true, palindrome("a"));
 }
+
+TEST(PalindromeTests, returnsTrueIfTwoSameLettersPassedIn) {
+    EXPECT_EQ(false, palindrome("ab"));
+    EXPECT_EQ(true, palindrome("bb"));
+}
