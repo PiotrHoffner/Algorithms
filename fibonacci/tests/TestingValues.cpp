@@ -1,6 +1,6 @@
 #include "TestingValues.hpp"
 
-TestingValues::TestingValues(int expected, int argument, std::string msg)
+TestingValues::TestingValues(unsigned expected, unsigned argument, std::string msg)
     :   expected(expected), argument(argument), msg(msg)
     {}
 

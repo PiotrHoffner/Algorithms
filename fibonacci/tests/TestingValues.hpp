@@ -4,10 +4,10 @@
 #include <ostream>
 
 struct TestingValues {
-    TestingValues(int expected, int argument, std::string msg = "");
+    TestingValues(unsigned expected, unsigned argument, std::string msg = "");
 
-    int expected;
-    int argument;
+    unsigned expected;
+    unsigned argument;
     std::string msg;
 };
 
