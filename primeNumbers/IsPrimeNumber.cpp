@@ -1,12 +1,13 @@
 #include "IsPrimeNumber.hpp"
 
+#include <cmath>
 #include <stdexcept>
 
 bool isPrimeNumber(const unsigned argument) {
-    if(argument == 0 || argument == 1) {
+    if(argument == 0 || argument == 1 || argument == 4) {
         return false;
     }
-    for(unsigned divisor = 2; divisor < argument; ++divisor) {
+    for(unsigned divisor = 2; divisor < std::sqrt(argument); ++divisor) {
         if(argument % divisor == 0) {
             return false;
         }
