@@ -26,3 +26,7 @@ TEST(PalindromeTests, returnsTrueIfFourLetterPalindromePassedIn) {
     EXPECT_EQ(true, palindrome("abba"));
     EXPECT_EQ(false, palindrome("ccba"));
 }
+
+TEST(PalindromeTests, returnsTrueIfPalindromeWithSpecialCharactersPassedIn) {
+    EXPECT_EQ(true, palindrome("#no lemon, no melon"));
+}

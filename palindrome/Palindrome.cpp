@@ -1,8 +1,13 @@
 #include "Palindrome.hpp"
 
 #include <algorithm>
+#include <cctype>
 
 bool palindrome(const std::string& str) {
     if(str.size() == 0) return false;
-    return std::equal(str.cbegin(), str.cbegin() + str.size() / 2, str.crbegin());
+    std::string modifiedString;
+    std::copy_if(str.cbegin(), str.cend(), std::back_inserter(modifiedString), ::isalpha);
+    return std::equal(modifiedString.cbegin(),
+                      modifiedString.cbegin() + modifiedString.size() / 2,
+                      modifiedString.crbegin());
 }
