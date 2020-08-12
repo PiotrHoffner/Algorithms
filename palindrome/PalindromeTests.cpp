@@ -30,3 +30,7 @@ TEST(PalindromeTests, returnsTrueIfFourLetterPalindromePassedIn) {
 TEST(PalindromeTests, returnsTrueIfPalindromeWithSpecialCharactersPassedIn) {
     EXPECT_EQ(true, palindrome("#no lemon, no melon"));
 }
+
+TEST(PalindromeTests, returnsTrueIfPalindromeWithMixedLetterCasePassedIn) {
+    EXPECT_EQ(true, palindrome("Eva, can I see bees in a cave?"));
+}
