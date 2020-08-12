@@ -1,15 +1,18 @@
 #include "Palindrome.hpp"
 
-bool palindrome(const std::string& argument) {
-    if(argument.size() == 0) {
+bool palindrome(const std::string& str) {
+    if(str.size() == 0) {
         return false;
     }
-    if(argument.size() == 1) {
+    if(str.size() == 1) {
         return true;
     }
-    if(argument.size() == 2 && argument[0] == argument[1]) {
+    if(str.size() == 2 && str[0] == str[1]) {
         return true;
     }
-
+    if(str.size() == 3 && str[0] == str[str.size()-1]) {
+        return true;
+    }
+    
     return false;
 }

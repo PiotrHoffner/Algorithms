@@ -13,3 +13,7 @@ TEST(PalindromeTests, returnsTrueIfTwoSameLettersPassedIn) {
     EXPECT_EQ(false, palindrome("ab"));
     EXPECT_EQ(true, palindrome("bb"));
 }
+
+TEST(PalindromeTests, returnsTrueIfThreeLetterPalindromePassedIn) {
+    EXPECT_EQ(true, palindrome("did"));
+}
