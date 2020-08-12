@@ -6,14 +6,14 @@ struct NwwTests : public ::testing::TestWithParam<TestingValues> {};
 
 INSTANTIATE_TEST_SUITE_P(ParamT1,
                          NwwTests,
-                         ::testing::Values(TestingValues{3, 1, 3},
-                                           TestingValues{3, 3, 1},
-                                           TestingValues{15, 3, 5},
-                                           TestingValues{15, 5, 3},
-                                           TestingValues{12, 6, 4},
-                                           TestingValues{12, 4, 6},
-                                           TestingValues{0, 0, 7},
-                                           TestingValues{0, 7, 0}
+                         ::testing::Values(TestingValues(3, 1, 3),
+                                           TestingValues(3, 3, 1),
+                                           TestingValues(15, 3, 5),
+                                           TestingValues(15, 5, 3),
+                                           TestingValues(12, 6, 4),
+                                           TestingValues(12, 4, 6),
+                                           TestingValues(0, 0, 7),
+                                           TestingValues(0, 7, 0)
 
 ));
 
