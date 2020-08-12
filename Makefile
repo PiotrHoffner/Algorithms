@@ -1,4 +1,4 @@
-.PHONY: algorithms clean binarySearch bubbleSort fibonacci nwd palindrome primeNumbers
+.PHONY: algorithms clean binarySearch bubbleSort fibonacci nwd palindrome primeNumbers quickSort
 
 default: algorithms
 
@@ -23,6 +23,9 @@ primeNumbers:
 fibonacci:
 	cd fibonacci && mkdir -p build && cd build && cmake .. && make -j && ./Fibonacci-ut
 
+quickSort:
+	cd quickSort && mkdir -p build && cd build && cmake .. && make -j && ./QuickSort-ut
+
 clean:
 	rm -rf ./_gtest
 	rm -rf ./_build
@@ -33,3 +36,4 @@ clean:
 	rm -rf ./palindrome/build
 	rm -rf ./primeNumbers/build
 	rm -rf ./fibonacci/build
+	rm -rf ./quickSort/build
