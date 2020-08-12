@@ -17,3 +17,7 @@ TEST(PalindromeTests, returnsTrueIfTwoSameLettersPassedIn) {
 TEST(PalindromeTests, returnsTrueIfThreeLetterPalindromePassedIn) {
     EXPECT_EQ(true, palindrome("did"));
 }
+
+TEST(PalindromeTests, returnsFalseIfThreeLetterNonPalindromePassedIn) {
+    EXPECT_EQ(false, palindrome("pon"));
+}
