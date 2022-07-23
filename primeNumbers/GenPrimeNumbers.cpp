@@ -5,7 +5,7 @@
 #include <vector>
 #include <stdexcept>
 
-std::vector<int> genPrimeNumbers(size_t upperLimit) {
+std::vector<int> genPrimeNumbers(std::size_t upperLimit) {
     if(upperLimit < 2) {
         throw std::invalid_argument("You cannot pass argument less then 2 for genPrimeNumbers()!");
     }

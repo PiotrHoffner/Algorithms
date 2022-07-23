@@ -2,4 +2,4 @@
 
 #include <vector>
 
-std::vector<int> genPrimeNumbers(size_t upperLimit);
+std::vector<int> genPrimeNumbers(std::size_t upperLimit);
